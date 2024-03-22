@@ -3,16 +3,43 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { CreateCategoryPageComponent } from './pages/create-category-page/create-category-page.component';
+import { CreateQuestionPageComponent } from './pages/create-question-page/create-question-page.component';
+import { EditCategoryPageComponent } from './pages/edit-category-page/edit-category-page.component';
+import { EditQuestionPageComponent } from './pages/edit-question-page/edit-question-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { PlayToQuizComponent } from './pages/play-to-quiz/play-to-quiz.component';
+import { QuestCategorizerComponent } from './pages/quest-categorizer/quest-categorizer.component';
+import { ResultPageComponent } from './pages/result-page/result-page.component';
+import { MyStatsPageComponent } from './pages/my-stats-page/my-stats-page.component';
+import { FormQuestionComponent } from './components/form-question/form-question.component';
+import { FormCategoryComponent } from './components/form-category/form-category.component';
+import { IconComponent } from './components/icon/icon.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomePageComponent,
+    PlayToQuizComponent,
+    QuestCategorizerComponent,
+    PageNotFoundComponent,
+    ResultPageComponent,
+    AdminPageComponent,
+    CreateCategoryPageComponent,
+    EditCategoryPageComponent,
+    MyStatsPageComponent,
+    NavBarComponent,
+    EditQuestionPageComponent,
+    CreateQuestionPageComponent,
+    FormQuestionComponent,
+    FormCategoryComponent,
+    IconComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
