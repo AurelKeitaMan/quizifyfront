@@ -1,8 +1,10 @@
-<div>
-    <h2 class="titre"> Choisissez une catégorie pour lancer votre Quiz </h2>
-    <p class="container">
-        <select [(ngModel)]="selectedOption">
-        <option *ngFor = "let option of options" [value]="option">{{ option }}</select>
-            <button class="button">OK</button>
-    </p>
+<div class="container">
+    <div>
+    <label class="titre" for="category"> <h1>Chosissez une catégorie pour lancer votre Quiz</h1></label>
+    <p class="container">   <select id="category" [(ngModel)]="selectedOption" name="category">
+      <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+    </select>
+  <button class="button" (click)="onSubmit()">OK</button>
+</p> 
 </div>
+  
