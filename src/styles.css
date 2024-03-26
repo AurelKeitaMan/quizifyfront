@@ -2,7 +2,6 @@
     border-color: 9987B7;
     border-radius: 5px;
     background-color: 9987B7;
-  
 }
 
 .titre {
@@ -13,16 +12,20 @@
     margin-top : 50px;
 }
 
-select {
-    margin: 10px;
-    margin-top: 20 px;
-    width: 200px;
-    height: 30px;
-}
-
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.background {
+    background-color: B89BBA;
+}
+
+
+select {
+    margin: 10px;
+    margin-top: 20 px;
+    width: 200px;
+    height: 30px;
+}
