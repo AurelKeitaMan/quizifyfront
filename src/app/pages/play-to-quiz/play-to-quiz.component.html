@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container1">
     <div>
     <label class="titre" for="category"> <h1>Chosissez une catégorie pour lancer votre Quiz</h1></label>
-    <p class="container">   <select id="category" [(ngModel)]="selectedOption" name="category">
+    <p class="container1">   <select class="select" id="category" [(ngModel)]="selectedOption" name="category">
       <option *ngFor="let option of options" [value]="option">{{ option }}</option>
     </select>
   <button class="button" (click)="onSubmit()">OK</button>
