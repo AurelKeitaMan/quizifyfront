@@ -20,7 +20,7 @@ import { MyStatsPageComponent } from './pages/my-stats-page/my-stats-page.compon
 import { FormQuestionComponent } from './components/form-question/form-question.component';
 import { FormCategoryComponent } from './components/form-category/form-category.component';
 import { IconComponent } from './components/icon/icon.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { FormResponseComponent } from './components/form-response/form-response.component';
 
 @NgModule({
