@@ -1,1 +1,25 @@
-<p>admin-page works!</p>
+<div class="container d-flex justify-content-center">
+  <div class="card w-75">
+    <table class="table" described="Liste des categories">
+      <thead>
+        <th>Nom</th>
+        <th>Modifier</th>
+        <th>Supprimer</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let categorie of ['a', 'b', 'c']">
+          <td>{{ categorie }}</td>
+          <td>
+            <a [routerLink]="['']"></a>
+          </td>
+          <td>
+            <a class="fa fa-remove"></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-center m-3">
+      <a class="btn btn-primary" [routerLink]="['']">Ajouter une categorie></a>
+    </div>
+  </div>
+</div>
