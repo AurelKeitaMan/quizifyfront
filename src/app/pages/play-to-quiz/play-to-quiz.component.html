@@ -1,6 +1,6 @@
 <div>
-    <p>
-        <select [(ngModel)]="selectedOption">
+    <p>        <select [(ngModel)]="selectedOption">
         <option *ngFor = "let option of options" [value]="option">{{ option }}</select>
+            <button>OK</button>
     </p>
 </div>
