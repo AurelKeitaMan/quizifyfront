@@ -20,6 +20,7 @@ import { FormQuestionComponent } from './components/form-question/form-question.
 import { FormCategoryComponent } from './components/form-category/form-category.component';
 import { IconComponent } from './components/icon/icon.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormResponseComponent } from './components/form-response/form-response.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormQuestionComponent,
     FormCategoryComponent,
     IconComponent,
+    FormResponseComponent,
   ],
   imports: [
     BrowserModule,
