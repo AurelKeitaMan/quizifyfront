@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./play-to-quiz.component.css']
 })
 export class PlayToQuizComponent {
+options = ['Animaux', 'Musique', 'Cinéma', 'Sport'];
+  selectedOption!: string;
 
 }

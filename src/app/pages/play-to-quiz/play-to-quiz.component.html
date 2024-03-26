@@ -1,1 +1,6 @@
-<p>play-to-quiz works!</p>
+<div>
+    <p>
+        <select [(ngModel)]="selectedOption">
+        <option *ngFor = "let option of options" [value]="option">{{ option }}</select>
+    </p>
+</div>
