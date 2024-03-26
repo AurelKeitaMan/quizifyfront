@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+button {
+    border-color: 9987B7;
+    border-radius: 5px;
+    background-color: 9987B7;
+  
+}
+
+.titre {
+    display: flexbox;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-top : 50px;
+}
+
+select {
+    margin: 10px;
+    margin-top: 20 px;
+    width: 200px;
+    height: 30px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

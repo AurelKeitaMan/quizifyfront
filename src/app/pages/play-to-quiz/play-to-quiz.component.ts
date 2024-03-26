@@ -8,5 +8,4 @@ import { Component } from '@angular/core';
 export class PlayToQuizComponent {
 options = ['Animaux', 'Musique', 'Cinéma', 'Sport'];
   selectedOption!: string;
-
 }
