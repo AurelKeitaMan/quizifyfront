@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { HttpClientModule } from '@angular/common/http';
 import { CreateCategoryPageComponent } from './pages/create-category-page/create-category-page.component';
 import { CreateQuestionPageComponent } from './pages/create-question-page/create-question-page.component';
 import { EditCategoryPageComponent } from './pages/edit-category-page/edit-category-page.component';
@@ -18,6 +20,8 @@ import { MyStatsPageComponent } from './pages/my-stats-page/my-stats-page.compon
 import { FormQuestionComponent } from './components/form-question/form-question.component';
 import { FormCategoryComponent } from './components/form-category/form-category.component';
 import { IconComponent } from './components/icon/icon.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormResponseComponent } from './components/form-response/form-response.component';
 
 
 @NgModule({
@@ -38,8 +42,15 @@ import { IconComponent } from './components/icon/icon.component';
     FormQuestionComponent,
     FormCategoryComponent,
     IconComponent,
+    FormResponseComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
