@@ -1,10 +1,10 @@
-.button {
+.button-custom-manue {
   border-color: 9987B7;
   border-radius: 5px;
   background-color: 9987B7;
 }
 
-.titre {
+.titre-custom-manue {
   display: flexbox;
   flex-wrap: wrap;
   margin-bottom: 10px;
@@ -12,11 +12,17 @@
   margin-top: 50px;
 }
 
-.background {
+.container-custom-manue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-custom-manue {
   background-color: B89BBA;
 }
 
-select {
+.select-custom-manue {
   margin: 10px;
   margin-top: 20 px;
   width: 200px;
