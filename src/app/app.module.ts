@@ -19,6 +19,7 @@ import { FormQuestionComponent } from './components/form-question/form-question.
 import { FormCategoryComponent } from './components/form-category/form-category.component';
 import { IconComponent } from './components/icon/icon.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
