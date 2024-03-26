@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { HttpClientModule } from '@angular/common/http';
 import { CreateCategoryPageComponent } from './pages/create-category-page/create-category-page.component';
 import { CreateQuestionPageComponent } from './pages/create-question-page/create-question-page.component';
 import { EditCategoryPageComponent } from './pages/edit-category-page/edit-category-page.component';
@@ -18,6 +19,7 @@ import { MyStatsPageComponent } from './pages/my-stats-page/my-stats-page.compon
 import { FormQuestionComponent } from './components/form-question/form-question.component';
 import { FormCategoryComponent } from './components/form-category/form-category.component';
 import { IconComponent } from './components/icon/icon.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,13 @@ import { IconComponent } from './components/icon/icon.component';
     FormCategoryComponent,
     IconComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
