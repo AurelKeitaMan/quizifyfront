@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Category } from '../models/category';
 
 @Injectable({
   providedIn: 'root',
@@ -9,24 +10,24 @@ export class CategoryService {
   private urlApi = 'http://localhost:8080/api/categorie';
   constructor(private http: HttpClient) {}
 
-  getCategories(): Observable<Object[]> {
-    return this.http.get<Object[]>(this.urlApi);
+  getCategories(): Observable<Category[]> {
+    return this.http.get<Category[]>(this.urlApi);
   }
 
-  getCategoryById(id: number): Observable<Object> {
-    return this.http.get<Object>(`${this.urlApi}/${id}`);
+  getCategoryById(id: number): Observable<Category> {
+    return this.http.get<Category>(`${this.urlApi}/${id}`);
   }
 
-  addCategory(category: Object): Observable<Object> {
-    return this.http.post<Object>(this.urlApi, category);
+  addCategory(category: Category): Observable<Category> {
+    return this.http.post<Category>(this.urlApi, category);
   }
 
   deleteCategory(id: number) {
     const url = `${this.urlApi}/${id}`;
-    return this.http.delete<Object>(url);
+    return this.http.delete<Category>(url);
   }
 
-  updateCategory(id: number, category: Object): Observable<Object> {
+  updateCategory(id: number, category: Category): Observable<Object> {
     const url = `${this.urlApi}/${id}`;
     return this.http.put<Object>(url, category);
   }
