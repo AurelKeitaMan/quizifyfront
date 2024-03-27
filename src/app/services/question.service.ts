@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Question } from '../models/question';
 
 @Injectable({
   providedIn: 'root',
@@ -9,23 +10,23 @@ export class QuestionService {
   private urlApi = 'http://localhost:8080/api/question';
   constructor(private http: HttpClient) {}
 
-  getQuestions(): Observable<Object[]> {
-    return this.http.get<Object[]>(this.urlApi);
+  getQuestions(): Observable<Question[]> {
+    return this.http.get<Question[]>(this.urlApi);
   }
 
-  getQuestionById(id: number): Observable<Object> {
-    return this.http.get<Object>(`${this.urlApi}/${id}`);
+  getQuestionById(id: number): Observable<Question> {
+    return this.http.get<Question>(`${this.urlApi}/${id}`);
   }
 
-  addQuestion(question: Object): Observable<Object> {
-    return this.http.post<Object>(this.urlApi, question);
+  addQuestion(question: Question): Observable<Question> {
+    return this.http.post<Question>(this.urlApi, question);
   }
 
   deleteQuestion(id: number) {
-    return this.http.delete<Object>(`${this.urlApi}/${id}`);
+    return this.http.delete<Question>(`${this.urlApi}/${id}`);
   }
 
-  updateQuestion(id: number, question: Object): Observable<Object> {
-    return this.http.put<Object>(`${this.urlApi}/${id}`, question);
+  updateQuestion(id: number, question: Question): Observable<Question> {
+    return this.http.put<Question>(`${this.urlApi}/${id}`, question);
   }
 }

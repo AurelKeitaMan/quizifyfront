@@ -19,6 +19,9 @@ export class AdminPageComponent implements OnInit {
   deleteCategory(id: number) {
     this.categoryService.deleteCategory(id).subscribe(() => {
       console.log('ok');
+      this.categoryToDisplay = [
+        ...this.categoryToDisplay.filter((c) => c.id !== id),
+      ];
     });
   }
 }
