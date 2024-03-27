@@ -1,1 +1,19 @@
-<p>form-category works!</p>
+<form
+  (ngSubmit)="onSubmitForm()"
+  [formGroup]="formCategory"
+  class="w-25 container"
+>
+  <div class="mb-3">
+    <label for="input-category" class="form-label">Nom</label>
+    <input
+      type="text"
+      formControlName="libelle"
+      id="input-category"
+      class="form-control"
+    />
+  </div>
+
+  <button class="btn btn-dark" type="submit">
+    {{ category ? "Modifier" : "Créer" }} la catégorie
+  </button>
+</form>

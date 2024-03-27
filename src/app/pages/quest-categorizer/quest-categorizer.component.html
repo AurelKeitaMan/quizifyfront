@@ -1,1 +1,29 @@
-<p>quest-categorizer works!</p>
+<div class="d-flex justify-content-center background-quizify">
+  <div class="card w-75">
+    <table class="table table-bordered" described="Liste des categories">
+      <thead>
+        <th class="w-25">Question</th>
+        <th class="w-25">Modifier</th>
+        <th class="w-25">Supprimer</th>
+      </thead>
+      <tbody class="text-center">
+        <tr *ngFor="let question of questionToDisplay">
+          <td>
+            <a [routerLink]="['question']">{{ question.libelle }}</a>
+          </td>
+          <td>
+            <a [routerLink]="['question/edit', question.id]">Update</a>
+          </td>
+          <td>
+            <a (click)="deleteQuestion(question.id)" style="color: red">X</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-center m-3">
+      <a class="btn btn-dark" [routerLink]="['question/create']"
+        >Ajouter une question</a
+      >
+    </div>
+  </div>
+</div>
