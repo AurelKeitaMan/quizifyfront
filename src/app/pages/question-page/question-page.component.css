@@ -1,0 +1,30 @@
+.container-question {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 20px 0;
+        justify-content: center;
+        align-items: center;
+}
+
+.categorie-question {
+        margin: 20px;
+        margin-left: 50px;
+        display: flex;
+        font-weight: bold;
+        font-size: x-large ;
+}
+
+.titre-question {
+        margin-bottom: 60px;
+     }
+
+.button-question {
+    margin-top: 20px;
+}
+
+input {
+        text-align: center;
+        font-size: x-large;
+        background-color: E5D2F8;
+}
