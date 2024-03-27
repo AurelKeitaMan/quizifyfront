@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Question } from 'src/app/models/question';
 import { QuestionService } from 'src/app/services/question.service';
 
@@ -9,10 +10,20 @@ import { QuestionService } from 'src/app/services/question.service';
 })
 export class QuestCategorizerComponent implements OnInit {
   questionToDisplay: Question[] = [];
-  constructor(private questionService: QuestionService) {}
+  constructor(
+    private questionService: QuestionService,
+    private route: ActivatedRoute
+  ) {}
   ngOnInit(): void {
-    this.questionService.getQuestions().subscribe((question) => {
-      this.questionToDisplay = [...question];
+    this.route.paramMap.subscribe((param: ParamMap) => {
+      if (param) {
+        const id = param.get('id')!;
+        this.questionService
+          .getQuestionsByCategory(+id)
+          .subscribe((question) => {
+            this.questionToDisplay = [...question];
+          });
+      }
     });
   }
 

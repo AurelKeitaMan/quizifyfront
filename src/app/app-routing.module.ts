@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'quiz/question', component: QuestionPageComponent },
   { path: 'quiz/result', component: ResultPageComponent },
   { path: 'admin', component: AdminPageComponent },
-  { path: 'admin/category', component: QuestCategorizerComponent },
+  { path: 'admin/category/:id', component: QuestCategorizerComponent },
   { path: 'admin/category/create', component: CreateCategoryPageComponent },
   { path: 'admin/category/edit/:id', component: EditCategoryPageComponent },
   { path: 'admin/question/create', component: CreateQuestionPageComponent },

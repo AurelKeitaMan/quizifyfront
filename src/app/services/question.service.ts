@@ -13,7 +13,9 @@ export class QuestionService {
   getQuestions(): Observable<Question[]> {
     return this.http.get<Question[]>(this.urlApi);
   }
-
+  getQuestionsByCategory(id: number): Observable<Question[]> {
+    return this.http.get<Question[]>(`${this.urlApi}/${id}/categorie`);
+  }
   getQuestionById(id: number): Observable<Question> {
     return this.http.get<Question>(`${this.urlApi}/${id}`);
   }

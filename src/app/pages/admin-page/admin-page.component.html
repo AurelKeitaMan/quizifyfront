@@ -9,7 +9,9 @@
       <tbody class="text-center">
         <tr *ngFor="let category of categoryToDisplay">
           <td>
-            <a [routerLink]="['category']">{{ category.libelle }}</a>
+            <a [routerLink]="['category', category.id]">{{
+              category.libelle
+            }}</a>
           </td>
           <td>
             <a [routerLink]="['category/edit', category.id]">Update</a>
