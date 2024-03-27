@@ -31,7 +31,6 @@ export class PlayToQuizComponent implements OnInit {
   onSubmit() {
     console.log('Option sélectionnée : ', this.selectedOption);
     if (this.selectedOption) {
-      // Rediriger en fonction de l'option sélectionnée
       switch (this.selectedOption.toLowerCase()) {
         case 'animaux':
           this.router.navigate(['/quiz/question']);

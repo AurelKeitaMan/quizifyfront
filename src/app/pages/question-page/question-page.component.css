@@ -128,25 +128,34 @@ div label input {
    color:#fff;
 }
 
-.ck input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-
+/*--------------*/
 .hidden {
  position: absolute;
  visibility: hidden;
  opacity: 0;
 }
 
-input[type=checkbox]+label {
+input[type=radio]+label {
  color: black;
  font-weight:normal;
 }
 
-input[type=checkbox]:checked+label {
+input[type=radio]:checked+label {
  color: black;
  font-weight: bold;
  background-color: #9987B7;
+ border-color: black;
+ border-width: 1.5px;
+}
+
+.hidden-radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ck input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }

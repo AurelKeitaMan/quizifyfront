@@ -14,7 +14,7 @@ export class QuestionPageComponent {
     this.selectedOption = option;
   }
 
-  isSelected(option: string): boolean {
+    isSelected(option: string): boolean {
     return this.selectedOption === option;
   }
 
