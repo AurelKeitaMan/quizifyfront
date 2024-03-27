@@ -1,28 +1,30 @@
-.button {
-    border-color: 9987B7;
-    border-radius: 5px;
-    background-color: 9987B7;
-  
+.button-custom-manue {
+  border-color: 9987B7;
+  border-radius: 5px;
+  background-color: 9987B7;
 }
 
-.titre {
-    display: flexbox;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
-    text-align: center;
-    margin-top : 50px;
+.titre-custom-manue {
+  display: flexbox;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  text-align: center;
+  margin-top: 50px;
 }
 
-select {
-    margin: 10px;
-    margin-top: 20 px;
-    width: 200px;
-    height: 30px;
+.container-custom-manue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.background-custom-manue {
+  background-color: B89BBA;
 }
 
+.select-custom-manue {
+  margin: 10px;
+  margin-top: 20 px;
+  width: 200px;
+  height: 30px;
+}

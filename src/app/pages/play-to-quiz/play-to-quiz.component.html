@@ -1,8 +1,20 @@
-<div>
-    <h2 class="titre"> Choisisssez une catégorie pour lancer votre Quiz </h2>
-    <p class="container">
-        <select [(ngModel)]="selectedOption">
-        <option *ngFor = "let option of options" [value]="option">{{ option }}</select>
-            <button class="button">OK</button>
+<div class="container-custom-manue">
+  <div>
+    <label class="titre-custom-manue" for="category">
+      <h1>Choisissez une catégorie pour lancer votre Quiz</h1></label
+    >
+    <p class="container-custom-manue">
+      <select
+        class="select-custom-manue"
+        id="category"
+        [(ngModel)]="selectedOption"
+        name="category"
+      >
+        <option *ngFor="let option of options" [value]="option">
+          {{ option }}
+        </option>
+      </select>
+      <button class="button-custom-manue" (click)="onSubmit()">OK</button>
     </p>
+  </div>
 </div>
