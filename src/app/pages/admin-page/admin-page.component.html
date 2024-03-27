@@ -2,24 +2,26 @@
   <div class="card w-75">
     <table class="table" described="Liste des categories">
       <thead>
-        <th>Nom</th>
-        <th>Modifier</th>
-        <th>Supprimer</th>
+        <th class="w-25">Nom</th>
+        <th class="w-25">Modifier</th>
+        <th class="w-25">Supprimer</th>
       </thead>
       <tbody>
         <tr *ngFor="let categorie of ['a', 'b', 'c']">
           <td>{{ categorie }}</td>
           <td>
-            <a [routerLink]="['']"></a>
+            <a [routerLink]="['']">Update</a>
           </td>
           <td>
-            <a class="fa fa-remove"></a>
+            <a class="bi">remove</a>
           </td>
         </tr>
       </tbody>
     </table>
     <div class="d-flex justify-content-center m-3">
-      <a class="btn btn-primary" [routerLink]="['']">Ajouter une categorie></a>
+      <a class="btn" id="custum-color" [routerLink]="['']"
+        >Ajouter une categorie</a
+      >
     </div>
   </div>
 </div>
