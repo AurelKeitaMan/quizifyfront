@@ -7,6 +7,10 @@
         align-items: center;
 }
 
+.element-style {
+  height: 90vh;
+}
+
 .categorie-question {
 
         margin-left: 50px;
@@ -23,10 +27,15 @@
     margin-top: 20px;
 }
 
-input {
+span {
         text-align: center;
-        font-size: x-large;
+        font-size:large;
         background-color: #E5D2F8;
+}
+
+.span-size {
+  height: max-content;
+  width: max-content;
 }
 
 .question {
@@ -65,3 +74,7 @@ input {
     height: 30px;
   }
   
+  button {
+    margin-top: 10px;
+    background-color: #B89BBA;
+  }

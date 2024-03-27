@@ -1,10 +1,9 @@
-<div class="background-custom-manue">
+<div class="background-custom-manue element-style">
     <div>
     <style>
         .option-input {
             cursor: pointer;
             padding: 5px 10px;
-            border-radius: 5px;
             transition: background-color 0.3s ease;
             background-color: #f2f2f2;
             color: #333;
@@ -18,15 +17,17 @@
             background-color: #9987B7;
         }
     </style>
+<div>
     <p class="categorie-question">Cinéma</p>
     <h3 class="titre-custom-manue titre-question">Question 1 - En quelle année est sorti le film “La vie est belle” ?</h3>
     <div class="container-question">
-        <p (click)="selectOption('1998')"><input type="text" id="option1" class="option-input" placeholder="A - 1998"></p>
-        <p (click)="selectOption('2000')"><input type="text" id="option2" class="option-input" placeholder="B - 2000"></p>
-        <p (click)="selectOption('1985')"><input type="text" id="option3" class="option-input" placeholder="C - 1985"></p>
-        <p (click)="selectOption('2010')"><input type="text" id="option4" class="option-input" placeholder="D - 2010"></p>
-        <p ><button onclick="valider()">Valider</button></p>
+        <p class="span-size" (click)="selectOption('1998')"><span id="option1" class="option-input" readonly>A - 1998</span></p>
+        <p  class="span-size" (click)="selectOption('2000')"><span id="option2" class="option-input" readonly>B - 2000</span></p>
+        <p  class="span-size" (click)="selectOption('1985')"><span id="option3" class="option-input" readonly>C - 1985</span></p>
+        <p  class="span-size" (click)="selectOption('2010')"><span id="option4" class="option-input" readonly>D - 2010</span></p>
+        <p><button (click)="valider()">Valider</button></p>
     </div>
 </div>
+
 </div>
   
