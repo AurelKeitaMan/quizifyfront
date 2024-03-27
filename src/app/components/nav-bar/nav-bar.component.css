@@ -1,11 +1,13 @@
 /*{ border: inset 1px red;}*/
 .navbar {
   background-color: #9987b7;
+  font-weight: bold;
 }
 
 .navbar-size {
+    
   width: 100px;
-  height: 50px;
+  height: 10vh;
 }
 
 .logo {
@@ -20,4 +22,7 @@
 
 ul {
   list-style: none;
+  padding-bottom:auto;
+  padding-bottom: auto;
 }
+
