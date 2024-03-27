@@ -1,13 +1,33 @@
-<table class="table">
-    <thead> <!--entête du tableau-->
-        <th>Nombre de parties jouées</th>
-        <th>Score Total</th>
-        <th>Nom categorie</th>
-        <th>Score par catégorie</th>
+
+<div class="container-stats">
+<table class="stats w-100" style="text-align: center; height: 90vh;">
+    <thead class="stats-entete w-100 p-0"> <!--entête du tableau-->
+        <tr>
+            <th>Nombre de parties jouées</th>
+            <th>Score Total</th>
+            <th>Nom categorie</th>
+            <th>Score par catégorie</th>
+        </tr>
     </thead>
     <tbody>
-        <td></td>
-        <td></td>
-        <td></td>
+        <tr>
+            <td>{{nombrePartieJouee}}</td>
+            <td>{{totalScore}}</td>
+            <td>
+                <table class="table" style="text-align: center;">
+                    <tr *ngFor="let categoriesNom of scoreParCategorie">
+                        <td>{{categoriesNom.categorie}}</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table class="table" style="text-align: center;">
+                    <tr *ngFor="let categorieScore of scoreParCategorie ">
+                        <td>{{categorieScore.score}}</td>
+                    </tr>
+                </table>
+            </td> 
+        </tr>    
     </tbody>
 </table>
+</div>
