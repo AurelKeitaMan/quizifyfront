@@ -22,6 +22,7 @@ import { FormCategoryComponent } from './components/form-category/form-category.
 import { IconComponent } from './components/icon/icon.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormResponseComponent } from './components/form-response/form-response.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { FormResponseComponent } from './components/form-response/form-response.
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

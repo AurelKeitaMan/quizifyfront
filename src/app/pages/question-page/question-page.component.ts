@@ -14,13 +14,21 @@ export class QuestionPageComponent {
     this.selectedOption = option;
   }
 
+  isSelected(option: string): boolean {
+    return this.selectedOption === option;
+  }
+
   valider() {
     if (this.selectedOption) {
       console.log("Option sélectionnée :", this.selectedOption);
-      // Ajoutez ici la logique pour gérer la sélection, par exemple, envoyer la réponse au serveur, etc.
+      // Envoyer la réponse au serveur
+      this.envoyerReponse(this.selectedOption);
     } else {
       console.log("Aucune option sélectionnée");
-      // Ajoutez ici la logique pour gérer le cas où aucune option n'est sélectionnée
+      // Afficher un message à l'utilisateur lui indiquant qu'il doit sélectionner une option
     }
+  }
+    envoyerReponse(option: string) {
+    // Effectuer une requête HTTP pour envoyer la réponse au serveur
   }
 }

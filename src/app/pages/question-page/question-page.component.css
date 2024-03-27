@@ -78,3 +78,7 @@ span {
     margin-top: 10px;
     background-color: #B89BBA;
   }
+
+  .selected {
+    background-color: #9987B7;
+}
