@@ -19,10 +19,10 @@ import { ResultPageComponent } from './pages/result-page/result-page.component';
 import { MyStatsPageComponent } from './pages/my-stats-page/my-stats-page.component';
 import { FormQuestionComponent } from './components/form-question/form-question.component';
 import { FormCategoryComponent } from './components/form-category/form-category.component';
-import { IconComponent } from './components/icon/icon.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormResponseComponent } from './components/form-response/form-response.component';
 import { CommonModule } from '@angular/common';
+import { IconComponent } from './icon/icon.component';
 
 
 @NgModule({

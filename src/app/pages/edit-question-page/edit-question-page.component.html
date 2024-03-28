@@ -1,1 +1,5 @@
-<p>edit-question-page works!</p>
+<app-form-question
+*ngIf="questionUp"
+[question]="questionUp"
+(submitFormQuestion)="updateQuestion($event)"
+></app-form-question>
