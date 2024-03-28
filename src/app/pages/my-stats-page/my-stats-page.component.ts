@@ -18,6 +18,10 @@ export class MyStatsPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.init();
+  }
+
+  init() {
     this.nombrePartieJouee = +(localStorage.getItem('partieJouee') ?? 0);
     this.totalScore = `${this.CalPouR()}`;
     this.catServ.getCategories().subscribe((categories) => {
@@ -38,7 +42,13 @@ export class MyStatsPageComponent implements OnInit {
     const GoodR = +(localStorage.getItem('goodResponse') ?? 0);
     const BadR = +(localStorage.getItem('badResponse') ?? 0);
     const totalResponses = GoodR + BadR;
-    const Result = Math.floor((GoodR / totalResponses) * 100);
-    return Result === 0 ? 'N/A' : Result + '%';
+    const Result =
+      totalResponses !== 0 ? Math.floor((GoodR / totalResponses) * 100) : -1;
+    return Result === -1 ? 'N/A' : Result + '%';
+  }
+
+  reset() {
+    localStorage.clear();
+    this.init();
   }
 }
