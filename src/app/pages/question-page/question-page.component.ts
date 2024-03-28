@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Category } from 'src/app/models/category';
 import { Question } from 'src/app/models/question';
@@ -10,10 +10,12 @@ import { QuestionService } from 'src/app/services/question.service';
   templateUrl: './question-page.component.html',
   styleUrls: ['./question-page.component.css']
 })
-export class QuestionPageComponent {
+export class QuestionPageComponent implements OnInit {
+[x: string]: any;
   categories!: Category;
+  questions: Question[] = [];
   selectedOption: string | null = null;
-  questions!: Question[];
+  currentQuestionIndex: number = 0;
 
   constructor(
     private categoryService: CategoryService,
@@ -21,10 +23,7 @@ export class QuestionPageComponent {
     private route: ActivatedRoute
   ) {}
 
-  selectOption(option: string) {
-    this.selectedOption = option;
-  }
-  ngOnInit() {
+  ngOnInit(): void {
     this.fetch();
   }
 
@@ -33,45 +32,30 @@ export class QuestionPageComponent {
       if (param) {
         const id = param.get('id')!;
         this.categoryService.getCategoryById(+id).subscribe((data: Category) => {
-        this.categories = data;
-        console.log("Catégorie ok", data);
-            
-      },
-      (error: any) => {
-        console.error('Une erreur s\'est produite lors de la récupération des catégories : ', error);
-      }
-    );}})
-
-    this.route.paramMap.subscribe((param: ParamMap) => {
-      if (param) {
-        const id = param.get('id')!;
+          this.categories = data;
+        });
+        
         this.questionService.getRandomQuestionsByCategory(+id).subscribe((data: Question[]) => {
-        this.questions = data;
-        console.log("Question ok", data);
-            
-      },
-      (error: any) => {
-        console.error('Une erreur s\'est produite lors de la récupération de la question : ', error);
+          this.questions = data;
+        });
       }
-    );}})
-
+    });
   }
   
-   isSelected(option: string): boolean {
-    return  this.selectedOption === option;
+  selectOption(option: string) {
+    this.selectedOption = option;
   }
 
-  valider() {
-    if (this.selectedOption) {
-      console.log("Option sélectionnée :", this.selectedOption);
-      // Envoyer la réponse au serveur
-      this.envoyerReponse(this.selectedOption);
-    } else {
-      console.log("Aucune option sélectionnée");
-      // Afficher un message à l'utilisateur lui indiquant qu'il doit sélectionner une option
-    }
-  }
-    envoyerReponse(option: string) {
+  envoyerReponse(option: string) {
     // Effectuer une requête HTTP pour envoyer la réponse au serveur
+  }
+
+  passerQuestionSuivante() {
+    if (this.currentQuestionIndex < this.questions.length - 1) {
+      this.currentQuestionIndex++;
+      this.selectedOption = null;
+    } else {
+      console.log("Fin des questions");
+    }
   }
 }

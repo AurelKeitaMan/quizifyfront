@@ -19,30 +19,19 @@
           }
       </style>
       
-<div class="background-custom-manue element-style">
-  <div *ngIf="categories">
-    <p class="categorie-question">{{ categories.libelle }}</p>
-    <div *ngFor="let question of questions">
-      <h3 class="titre-custom-manue titre-question">{{ question.libelle }}</h3>
-      <div class="container-question">
-        <p class="span-size ck">
-          <input type="radio" id="option1" class="option-input" [value]="'A'" (click)="selectOption('A')" name="option">
-          <label for="option1">{{ question.reponse[0].libelle }}</label>
-        </p>
-        <p class="span-size ck">
-          <input type="radio" id="option2" class="option-input" [value]="'B'" (click)="selectOption('B')" name="option">
-          <label for="option2">{{ question.reponse[1].libelle }}</label>
-        </p>
-        <p class="span-size ck">
-          <input type="radio" id="option3" class="option-input" [value]="'C'" (click)="selectOption('C')" name="option">
-          <label for="option3">{{ question.reponse[2].libelle }}</label>
-        </p>
-        <p class="span-size ck">
-          <input type="radio" id="option4" class="option-input" [value]="'D'" (click)="selectOption('D')" name="option">
-          <label for="option4">{{ question.reponse[3].libelle }}</label>
-        </p>
-        <p><button (click)="valider()">Valider</button></p>
+      <div class="background-custom-manue element-style">
+        <div *ngIf="categories">
+          <p class="categorie-question">{{ categories.libelle }}</p>
+          <div *ngIf="questions.length > 0">
+            <h3 class="titre-custom-manue titre-question">{{ questions[currentQuestionIndex].libelle }}</h3>
+            <div class="container-question">
+              <p class="span-size ck" *ngFor="let reponse of questions[currentQuestionIndex].reponse">
+                <input type="radio" [id]="reponse.id" class="option-input" [value]="reponse.id" (click)="selectOption(reponse.libelle)" name="option">
+                <label [for]="reponse.id">{{ reponse.libelle }}</label>
+              </p>
+              <p><button (click)="passerQuestionSuivante()">Valider</button></p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
+      
