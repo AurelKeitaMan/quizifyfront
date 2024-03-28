@@ -1,1 +1,64 @@
-<p>form-question works!</p>
+<form
+  (ngSubmit)="onSubmitForm()"
+  [formGroup]="formQuestion"
+  class="w-25 container"
+>
+  <div class="mb-3">
+    <label for="input-question" class="form-label">Question</label>
+    <input
+      type="text"
+      formControlName="libelle"
+      id="input-question"
+      class="form-control"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="input-reponse1" class="form-label">Réponse 1</label>
+    <input
+      type="text"
+      formControlName="reponse1"
+      id="input-reponse"
+      class="form-control"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="input-reponse2" class="form-label">Réponse 2</label>
+    <input
+      type="text"
+      formControlName="reponse2"
+      id="input-reponse2"
+      class="form-control"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="input-reponse3" class="form-label">Réponse 3</label>
+    <input
+      type="text"
+      formControlName="reponse3"
+      id="input-reponse3"
+      class="form-control"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="input-reponse4" class="form-label">Réponse 4</label>
+    <input
+      type="text"
+      formControlName="reponse4"
+      id="input-reponse4"
+      class="form-control"
+    />
+  </div>
+<div>
+  <button class="btn btn-dark" type="submit" >
+    Valider
+  </button>
+  <button class="btn btn-dark" [routerLink]="['../../../category/', id]">
+    Annuler
+  </button>
+</div>
+</form>
+

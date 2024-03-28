@@ -10,6 +10,7 @@ import { QuestionService } from 'src/app/services/question.service';
 })
 export class QuestCategorizerComponent implements OnInit {
   questionToDisplay: Question[] = [];
+  id!:number;
   constructor(
     private questionService: QuestionService,
     private route: ActivatedRoute
@@ -18,6 +19,7 @@ export class QuestCategorizerComponent implements OnInit {
     this.route.paramMap.subscribe((param: ParamMap) => {
       if (param) {
         const id = param.get('id')!;
+        this.id=+id;
         this.questionService
           .getQuestionsByCategory(+id)
           .subscribe((question) => {
@@ -25,6 +27,7 @@ export class QuestCategorizerComponent implements OnInit {
           });
       }
     });
+
   }
 
   deleteQuestion(id: number) {
