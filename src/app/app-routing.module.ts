@@ -16,11 +16,11 @@ import { QuestCategorizerComponent } from './pages/quest-categorizer/quest-categ
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'quiz', component: PlayToQuizComponent },
-  { path: 'quiz/question', component: QuestionPageComponent },
+  { path: 'quiz/question/:id', component: QuestionPageComponent },
   { path: 'quiz/result', component: ResultPageComponent },
   { path: 'admin', component: AdminPageComponent },
-  { path: 'admin/category/:id', component: QuestCategorizerComponent },
   { path: 'admin/category/create', component: CreateCategoryPageComponent },
+  { path: 'admin/category/:id', component: QuestCategorizerComponent },
   { path: 'admin/category/edit/:id', component: EditCategoryPageComponent },
   { path: 'admin/question/create', component: CreateQuestionPageComponent },
   { path: 'admin/question/edit/:id', component: EditQuestionPageComponent },

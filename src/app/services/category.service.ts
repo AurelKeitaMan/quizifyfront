@@ -13,6 +13,9 @@ export class CategoryService {
   getCategories(): Observable<Category[]> {
     return this.http.get<Category[]>(this.urlApi);
   }
+  getCategoriesForQuiz(): Observable<Category[]> {
+    return this.http.get<Category[]>(`${this.urlApi}/q3`);
+  }
 
   getCategoryById(id: number): Observable<Category> {
     return this.http.get<Category>(`${this.urlApi}/${id}`);

@@ -9,7 +9,7 @@
       <tbody class="text-center">
         <tr *ngFor="let question of questionToDisplay">
           <td>
-            <a [routerLink]="['question']">{{ question.libelle }}</a>
+            {{ question.libelle }}
           </td>
           <td>
             <a [routerLink]="['question/edit', question.id]">Update</a>

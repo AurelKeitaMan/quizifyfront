@@ -16,6 +16,9 @@ export class QuestionService {
   getQuestionsByCategory(id: number): Observable<Question[]> {
     return this.http.get<Question[]>(`${this.urlApi}/${id}/categorie`);
   }
+  getRandomQuestionsByCategory(id: number): Observable<Question[]> {
+    return this.http.get<Question[]>(`${this.urlApi}/random/${id}`);
+  }
   getQuestionById(id: number): Observable<Question> {
     return this.http.get<Question>(`${this.urlApi}/${id}`);
   }
