@@ -70,7 +70,6 @@ export class QuestionPageComponent implements OnInit {
             const CatLocal = `good${
               this.questions[this.currentQuestionIndex].categorie.libelle
             }`;
-            console.log(CatLocal);
 
             let goodCat = +(localStorage.getItem(CatLocal) ?? 0);
             goodCat++;

@@ -9,7 +9,7 @@ import { StatsService } from 'src/app/services/stats.service';
 })
 export class MyStatsPageComponent implements OnInit {
   nombrePartieJouee: number = 0;
-  totalScore: number = 0;
+  totalScore: string = 'No Result';
   scoreParCategorie: { categorie: string; score: number }[] = [];
 
   constructor(
@@ -19,7 +19,7 @@ export class MyStatsPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.nombrePartieJouee = +(localStorage.getItem('partieJouee') ?? 0);
-    this.totalScore = +(localStorage.getItem('goodResponse') ?? 0);
+    this.totalScore = `${this.CalPouR()}`;
     this.catServ.getCategories().subscribe((categories) => {
       this.scoreParCategorie = categories.map((category) => {
         return {
@@ -31,8 +31,14 @@ export class MyStatsPageComponent implements OnInit {
   }
 
   metLocal(e: string): number {
-    console.log(e);
-
     return +(localStorage.getItem(`good${e}`) ?? 0);
+  }
+
+  CalPouR() {
+    const GoodR = +(localStorage.getItem('goodResponse') ?? 0);
+    const BadR = +(localStorage.getItem('badResponse') ?? 0);
+    const totalResponses = GoodR + BadR;
+    const Result = Math.floor((GoodR / totalResponses) * 100);
+    return Result === 0 ? 'N/A' : Result + '%';
   }
 }

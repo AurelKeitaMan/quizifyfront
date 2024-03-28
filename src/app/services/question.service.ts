@@ -8,7 +8,7 @@ import { Question } from '../models/question';
 })
 export class QuestionService {
   private urlApi = 'http://localhost:8080/api/question';
- 
+
   constructor(private http: HttpClient) {}
 
   getQuestions(): Observable<Question[]> {
@@ -26,6 +26,9 @@ export class QuestionService {
 
   addQuestion(question: Question, id: number): Observable<Question> {
     return this.http.post<Question>(`${this.urlApi}/${id}`, question);
+  }
+  addQuestionB(question: Question): Observable<Question> {
+    return this.http.post<Question>(this.urlApi, question);
   }
 
   deleteQuestion(id: number) {
