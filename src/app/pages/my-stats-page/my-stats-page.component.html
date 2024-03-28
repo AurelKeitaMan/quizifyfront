@@ -1,33 +1,28 @@
 
-<div class="container-stats">
-<table class="stats w-100" style="text-align: center; height: 90vh;">
-    <thead class="stats-entete w-100 p-0"> <!--entête du tableau-->
-        <tr>
-            <th>Nombre de parties jouées</th>
-            <th>Score Total</th>
-            <th>Nom categorie</th>
-            <th>Score par catégorie</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>{{nombrePartieJouee}}</td>
-            <td>{{totalScore}}</td>
-            <td>
-                <table class="table" style="text-align: center;">
-                    <tr *ngFor="let categoriesNom of scoreParCategorie">
-                        <td>{{categoriesNom.categorie}}</td>
-                    </tr>
-                </table>
-            </td>
-            <td>
-                <table class="table" style="text-align: center;">
-                    <tr *ngFor="let categorieScore of scoreParCategorie ">
-                        <td>{{categorieScore.score}}</td>
-                    </tr>
-                </table>
-            </td> 
-        </tr>    
-    </tbody>
-</table>
+<div class="container-stats d-flex justify-content-around" style="height: 90vh;">
+    <div class=" d-flex flex-column justify-content-center text-center">
+        <p>Nombre de parties jouées</p>
+        <p>{{nombrePartieJouee}}</p>
+    </div>
+
+    <div class=" d-flex flex-column justify-content-center text-center">
+        <p>Score Total</p>
+        <p>{{totalScore}}</p>
+    </div>
+    <div class="stats w-50 align-items-center d-flex justify-content-center">
+        
+        <table class="stats w-50" style="text-align: center; height: 60vh;">
+            <thead class="stats-entete w-100 p-0"> <!--entête du tableau-->
+                <tr>
+                    <th>Nom categorie</th>
+                    <th>Score par catégorie</th>
+                </tr>
+            </thead >
+            <tbody *ngFor="let categoriesNom of scoreParCategorie">
+                <td>{{categoriesNom.categorie}}</td>
+                <td>{{categoriesNom.score}}</td>
+                
+            </tbody>
+        </table>
+    </div>
 </div>
