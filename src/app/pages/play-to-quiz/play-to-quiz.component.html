@@ -1,23 +1,23 @@
 <div class="background-custom-manue">
-<div class="container-custom-manue element-style">
-  <div>
-    <label class="titre-custom-manue" for="category">
-      <h1>Choisissez une catégorie pour lancer votre Quiz</h1></label
-    >
-    <p class="container-custom-manue">
-      <select
-        class="select-custom-manue"
-        id="category"
-        [(ngModel)]="selectedOption"
-        name="category"
-        style="background-color: #9987B7;"
-      >
-        <option *ngFor="let option of options" [value]="option">
-          {{ option }}
-        </option>
-      </select>
-      <button class="button-custom-manue" (click)="onSubmit()">OK</button>
-    </p>
+  <div class="container-custom-manue element-style">
+    <div>
+      <label class="titre-custom-manue" for="category">
+        <h1>Choisissez une catégorie pour lancer votre Quiz</h1>
+      </label>
+      <p class="container-custom-manue">
+        <select
+          class="select-custom-manue"
+          id="category"
+          [(ngModel)]="selectedOption"
+          name="category"
+          style="background-color: #9987B7;"
+        >
+          <option *ngFor="let option of options" [value]="option.id">
+            {{ option.libelle }}
+          </option>
+        </select>
+        <button class="button-custom-manue" (click)="onSubmit(selectedOption)">OK</button>
+      </p>
+    </div>
   </div>
-</div>
 </div>

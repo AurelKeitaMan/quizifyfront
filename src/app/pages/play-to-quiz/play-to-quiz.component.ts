@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Category } from 'src/app/models/category';
 import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
@@ -8,8 +9,9 @@ import { CategoryService } from 'src/app/services/category.service';
   styleUrls: ['./play-to-quiz.component.css']
 })
 export class PlayToQuizComponent implements OnInit {
-  options!: string[];
+  options!: Category[];
   selectedOption!: string;
+  categories: any;
 
   constructor(private categoryService: CategoryService, private router: Router) {}
 
@@ -18,9 +20,10 @@ export class PlayToQuizComponent implements OnInit {
   }
 
   loadCategories() {
-    this.categoryService.getCategories().subscribe(
-      (data: any[]) => {
-        this.options = data.map(category => category.libelle);
+    this.categoryService.getCategoriesForQuiz().subscribe(
+      (data: Category[]) => {
+        this.options = data
+        console.log("Je récupère toutes les catégories c'est ok", data);
       },
       error => {
         console.error('Une erreur est survenue lors du chargement des catégories : ', error);
@@ -28,25 +31,17 @@ export class PlayToQuizComponent implements OnInit {
     );
   }
 
-  onSubmit() {
-    console.log('Option sélectionnée : ', this.selectedOption);
-    if (this.selectedOption) {
-      switch (this.selectedOption.toLowerCase()) {
-        case 'animaux':
-          this.router.navigate(['/quiz/question']);
-          break;
-        case 'musique':
-          this.router.navigate(['/quiz/question']);
-          break;
-        case 'cinéma':
-          this.router.navigate(['/quiz/question']);
-          break;
-        case 'sport':
-          this.router.navigate(['/quiz/question']);
-          break;
-        default:
-          break;
-      }
+    isSelected(optionId: string): boolean {
+    console.log("C'est bon ça fonctionne, Catégorie sélectionnée :", optionId);
+    return this.selectedOption === optionId;
+  }
+
+  onSubmit(selectedCategoryId: string) {
+    console.log('Catégorie sélectionnée : ', selectedCategoryId);
+    if (selectedCategoryId) {
+      console.log(this.selectedOption);
+      
+      this.router.navigate(['/quiz/question/', selectedCategoryId]);
     }
   }
 }
