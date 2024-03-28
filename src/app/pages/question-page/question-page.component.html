@@ -1,37 +1,49 @@
-  <div class="background-custom-manue element-style">
-      <div>
-      <style>
-          .option-input {
-              cursor: pointer;
-              padding: 5px 10px;
-              transition: background-color 0.3s ease;
-              background-color: #f2f2f2;
-              color: #333;
+<div class="background-custom-manue element-style">
+  <div>
+    <style>
+      .option-input {
+        cursor: pointer;
+        padding: 5px 10px;
+        transition: background-color 0.3s ease;
+        background-color: #f2f2f2;
+        color: #333;
+      }
 
-          }
+      .option-input:hover {
+        background-color: #e5d2f8;
+      }
 
-          .option-input:hover {
-              background-color: #E5D2F8;
-          }
+      .option-input:active {
+        background-color: #9987b7;
+      }
+    </style>
 
-          .option-input:active {
-              background-color: #9987B7;
-          }
-      </style>
-      
-      <div class="background-custom-manue element-style">
-        <div *ngIf="categories">
-          <p class="categorie-question">{{ categories.libelle }}</p>
-          <div *ngIf="questions.length > 0">
-            <h3 class="titre-custom-manue titre-question">{{ questions[currentQuestionIndex].libelle }}</h3>
-            <div class="container-question">
-              <p class="span-size ck" *ngFor="let reponse of questions[currentQuestionIndex].reponse">
-                <input type="radio" [id]="reponse.id" class="option-input" [value]="reponse.id" (click)="selectOption(reponse.libelle)" name="option">
-                <label [for]="reponse.id">{{ reponse.libelle }}</label>
-              </p>
-              <p><button (click)="passerQuestionSuivante()">Valider</button></p>
-            </div>
+    <div class="background-custom-manue element-style">
+      <div *ngIf="categories">
+        <p class="categorie-question">{{ categories.libelle }}</p>
+        <div *ngIf="questions.length > 0">
+          <h3 class="titre-custom-manue titre-question">
+            {{ questions[currentQuestionIndex].libelle }}
+          </h3>
+          <div class="container-question">
+            <p
+              class="span-size ck"
+              *ngFor="let reponse of questions[currentQuestionIndex].reponse"
+            >
+              <input
+                type="radio"
+                [id]="reponse.id"
+                class="option-input"
+                [value]="reponse.id"
+                (click)="selectOption(reponse.id)"
+                name="option"
+              />
+              <label [for]="reponse.id">{{ reponse.libelle }}</label>
+            </p>
+            <p><button (click)="passerQuestionSuivante()">Valider</button></p>
           </div>
         </div>
       </div>
-      
+    </div>
+  </div>
+</div>
