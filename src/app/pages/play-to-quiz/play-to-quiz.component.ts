@@ -8,7 +8,7 @@ import { CategoryService } from 'src/app/services/category.service';
   styleUrls: ['./play-to-quiz.component.css']
 })
 export class PlayToQuizComponent implements OnInit {
-  options = ['Animaux', 'Musique', 'Cinéma', 'Sport'];
+  options!: string[];
   selectedOption!: string;
 
   constructor(private categoryService: CategoryService, private router: Router) {}
@@ -20,7 +20,7 @@ export class PlayToQuizComponent implements OnInit {
   loadCategories() {
     this.categoryService.getCategories().subscribe(
       (data: any[]) => {
-        this.options = data.map(category => category.name);
+        this.options = data.map(category => category.libelle);
       },
       error => {
         console.error('Une erreur est survenue lors du chargement des catégories : ', error);
