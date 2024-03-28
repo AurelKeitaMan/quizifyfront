@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Category } from 'src/app/models/category';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-question-page',
@@ -6,16 +8,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./question-page.component.css']
 })
 export class QuestionPageComponent {
+  categories!: Category;
   selectedOption: string | null = null;
 
-  constructor() { }
+  constructor(private categoryService: CategoryService) { }
 
   selectOption(option: string) {
     this.selectedOption = option;
   }
+  ngOnInit() {
+    this.fetchCategories();
+  }
 
-    isSelected(option: string): boolean {
-    return this.selectedOption === option;
+  fetchCategories() {
+    this.categoryService.getCategoryById(1).subscribe(
+      (data: Category) => {
+        this.categories = data;
+        
+      },
+      (error: any) => {
+        console.error('Une erreur s\'est produite lors de la récupération des catégories : ', error);
+      }
+    );
+  }
+  
+   isSelected(option: string): boolean {
+    return  this.selectedOption === option;
   }
 
   valider() {

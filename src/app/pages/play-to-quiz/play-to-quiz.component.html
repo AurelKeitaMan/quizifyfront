@@ -12,11 +12,11 @@
         name="category"
         style="background-color: #9987B7;"
       >
-        <option *ngFor="let option of options" [value]="option">
-          {{ option }}
+        <option *ngFor="let option of options" [value]="option.id">
+          {{ option.libelle }}
         </option>
       </select>
-      <button class="button-custom-manue" (click)="onSubmit()">OK</button>
+      <button class="button-custom-manue" (click)="onSubmit(1)">OK</button>
     </p>
   </div>
 </div>

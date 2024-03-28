@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Category } from 'src/app/models/category';
 import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { CategoryService } from 'src/app/services/category.service';
   styleUrls: ['./play-to-quiz.component.css']
 })
 export class PlayToQuizComponent implements OnInit {
-  options!: string[];
+  options!: Category[];
   selectedOption!: string;
 
   constructor(private categoryService: CategoryService, private router: Router) {}
@@ -19,8 +20,8 @@ export class PlayToQuizComponent implements OnInit {
 
   loadCategories() {
     this.categoryService.getCategories().subscribe(
-      (data: any[]) => {
-        this.options = data.map(category => category.libelle);
+      (data: Category[]) => {
+        this.options = data
       },
       error => {
         console.error('Une erreur est survenue lors du chargement des catégories : ', error);
@@ -28,21 +29,22 @@ export class PlayToQuizComponent implements OnInit {
     );
   }
 
-  onSubmit() {
+  onSubmit(id :number) {
     console.log('Option sélectionnée : ', this.selectedOption);
     if (this.selectedOption) {
+      this.router.navigate(['/quiz/question/',id]);
       switch (this.selectedOption.toLowerCase()) {
-        case 'animaux':
-          this.router.navigate(['/quiz/question']);
+        case '1':
+          this.router.navigate(['/quiz/question/1']);
           break;
         case 'musique':
-          this.router.navigate(['/quiz/question']);
+          this.router.navigate(['/quiz/question/2']);
           break;
-        case 'cinéma':
-          this.router.navigate(['/quiz/question']);
+        case 'cinema':
+          this.router.navigate(['/quiz/question/3']);
           break;
         case 'sport':
-          this.router.navigate(['/quiz/question']);
+          this.router.navigate(['/quiz/question/4']);
           break;
         default:
           break;
