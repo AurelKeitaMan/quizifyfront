@@ -11,6 +11,7 @@ import { CategoryService } from 'src/app/services/category.service';
 export class PlayToQuizComponent implements OnInit {
   options!: Category[];
   selectedOption!: string;
+  categories: any;
 
   constructor(private categoryService: CategoryService, private router: Router) {}
 
@@ -19,9 +20,10 @@ export class PlayToQuizComponent implements OnInit {
   }
 
   loadCategories() {
-    this.categoryService.getCategories().subscribe(
+    this.categoryService.getCategoriesForQuiz().subscribe(
       (data: Category[]) => {
         this.options = data
+        console.log("Je récupère toutes les catégories c'est ok", data);
       },
       error => {
         console.error('Une erreur est survenue lors du chargement des catégories : ', error);
@@ -29,26 +31,17 @@ export class PlayToQuizComponent implements OnInit {
     );
   }
 
-  onSubmit(id :number) {
-    console.log('Option sélectionnée : ', this.selectedOption);
-    if (this.selectedOption) {
-      this.router.navigate(['/quiz/question/',id]);
-      switch (this.selectedOption.toLowerCase()) {
-        case '1':
-          this.router.navigate(['/quiz/question/1']);
-          break;
-        case 'musique':
-          this.router.navigate(['/quiz/question/2']);
-          break;
-        case 'cinema':
-          this.router.navigate(['/quiz/question/3']);
-          break;
-        case 'sport':
-          this.router.navigate(['/quiz/question/4']);
-          break;
-        default:
-          break;
-      }
+    isSelected(optionId: string): boolean {
+    console.log("C'est bon ça fonctionne, Catégorie sélectionnée :", optionId);
+    return this.selectedOption === optionId;
+  }
+
+  onSubmit(selectedCategoryId: string) {
+    console.log('Catégorie sélectionnée : ', selectedCategoryId);
+    if (selectedCategoryId) {
+      console.log(this.selectedOption);
+      
+      this.router.navigate(['/quiz/question/', selectedCategoryId]);
     }
   }
 }

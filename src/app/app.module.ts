@@ -22,7 +22,7 @@ import { FormCategoryComponent } from './components/form-category/form-category.
 import { IconComponent } from './components/icon/icon.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormResponseComponent } from './components/form-response/form-response.component';
-import { CommonModule } from '@angular/common';
+import { QuestionPageComponent } from './pages/question-page/question-page.component';
 
 
 @NgModule({
@@ -44,6 +44,7 @@ import { CommonModule } from '@angular/common';
     FormCategoryComponent,
     IconComponent,
     FormResponseComponent,
+    QuestionPageComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +52,6 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -7,6 +7,12 @@ import { Category } from '../models/category';
   providedIn: 'root',
 })
 export class CategoryService {
+  getCategoriesById() {
+    throw new Error('Method not implemented.');
+  }
+  static id(id: any) {
+    throw new Error('Method not implemented.');
+  }
   private urlApi = 'http://localhost:8080/api/categorie';
   constructor(private http: HttpClient) {}
 

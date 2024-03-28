@@ -1,47 +1,48 @@
+  <div class="background-custom-manue element-style">
+      <div>
+      <style>
+          .option-input {
+              cursor: pointer;
+              padding: 5px 10px;
+              transition: background-color 0.3s ease;
+              background-color: #f2f2f2;
+              color: #333;
+
+          }
+
+          .option-input:hover {
+              background-color: #E5D2F8;
+          }
+
+          .option-input:active {
+              background-color: #9987B7;
+          }
+      </style>
+      
 <div class="background-custom-manue element-style">
-    <div>
-    <style>
-        .option-input {
-            cursor: pointer;
-            padding: 5px 10px;
-            transition: background-color 0.3s ease;
-            background-color: #f2f2f2;
-            color: #333;
-
-        }
-
-        .option-input:hover {
-            background-color: #E5D2F8;
-        }
-
-        .option-input:active {
-            background-color: #9987B7;
-        }
-    </style>
-<div class="background-custom-manue element-style">
-  <p class="categorie-question">{{ categories.libelle }}</p>
-  <div>
-      <h3 class="titre-custom-manue titre-question">Question 1 - En quelle année est sorti le film “La vie est belle” ?</h3>
+  <div *ngIf="categories">
+    <p class="categorie-question">{{ categories.libelle }}</p>
+    <div *ngFor="let question of questions">
+      <h3 class="titre-custom-manue titre-question">{{ question.libelle }}</h3>
       <div class="container-question">
         <p class="span-size ck">
-          <input type="radio" id="option1" class="option-input" [value]="'A'" (click)="selectOption('1998')" name="option">
-          <label for="option1">A - 1998</label>
+          <input type="radio" id="option1" class="option-input" [value]="'A'" (click)="selectOption('A')" name="option">
+          <label for="option1">{{ question.reponse[0].libelle }}</label>
         </p>
         <p class="span-size ck">
-          <input type="radio" id="option2" class="option-input" [value]="'B'" (click)="selectOption('2000')" name="option">
-          <label for="option2">B - 2000</label>
+          <input type="radio" id="option2" class="option-input" [value]="'B'" (click)="selectOption('B')" name="option">
+          <label for="option2">{{ question.reponse[1].libelle }}</label>
         </p>
         <p class="span-size ck">
-          <input type="radio" id="option3" class="option-input" [value]="'C'" (click)="selectOption('1985')" name="option">
-          <label for="option3">C - 1985</label>
+          <input type="radio" id="option3" class="option-input" [value]="'C'" (click)="selectOption('C')" name="option">
+          <label for="option3">{{ question.reponse[2].libelle }}</label>
         </p>
         <p class="span-size ck">
-          <input type="radio" id="option4" class="option-input" [value]="'D'" (click)="selectOption('2010')" name="option">
-          <label for="option4">D - 2010</label>
+          <input type="radio" id="option4" class="option-input" [value]="'D'" (click)="selectOption('D')" name="option">
+          <label for="option4">{{ question.reponse[3].libelle }}</label>
         </p>
         <p><button (click)="valider()">Valider</button></p>
       </div>
     </div>
   </div>
-  
-  
+</div>
