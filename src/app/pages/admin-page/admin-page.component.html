@@ -17,7 +17,13 @@
             <a [routerLink]="['category/edit', category.id]">Update</a>
           </td>
           <td>
-            <a (click)="deleteCategory(category.id)" style="color: red">X</a>
+            <a
+              (click)="deleteCategory(category.id)"
+              style="color: red"
+              class="cursor-pointer-custom"
+            >
+              X
+            </a>
           </td>
         </tr>
       </tbody>
