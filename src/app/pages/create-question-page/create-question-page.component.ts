@@ -30,6 +30,6 @@ export class CreateQuestionPageComponent {
   addQuestion(question: FormGroup) {
     console.log(question);
     this.router.navigate(['/admin/category', this.id]);
-    this.questionservice.addQuestion(question, this.id).subscribe(() => {});
+    this.questionservice.addQuestion(question.value, this.id).subscribe(() => {});
   }
 }

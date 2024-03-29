@@ -26,8 +26,8 @@ export class QuestionService {
     return this.http.get<Question>(`${this.urlApi}/${id}`);
   }
 
-  addQuestion(question: FormGroup, id: number): Observable<FormGroup> {
-    return this.http.post<FormGroup>(`${this.urlApi}/${id}`, question);
+  addQuestion(question: FormUp, id: number): Observable<FormUp> {
+    return this.http.post<FormUp>(`${this.urlApi}/${id}`, question);
   }
   addQuestionB(question: Question): Observable<Question> {
     return this.http.post<Question>(this.urlApi, question);
