@@ -14,7 +14,24 @@
   </div>
 
   <div class="mb-3">
-    <label for="input-reponse1" class="form-label">Réponse 1</label>
+    <label for="input-reponse1" class="form-label pe-3">Réponse 1</label>
+    <input
+      type="radio"
+      id="bonneRep1"
+      name="bonneReponse"
+      #rep1
+      [value]="'reponse1'"
+      formControlName="bonneReponse"
+    />
+    <label
+      for="bonneRep1"
+      class="form-label"
+      [ngClass]="{
+        'btn-success': rep1.checked,
+        'btn-secondary': !rep1.checked
+      }"
+      >{{ rep1.checked ? "Bonne réponse" : "Mauvaise réponse" }}</label
+    >
     <input
       type="text"
       formControlName="reponse1"
@@ -24,7 +41,24 @@
   </div>
 
   <div class="mb-3">
-    <label for="input-reponse2" class="form-label">Réponse 2</label>
+    <label for="input-reponse2" class="form-label pe-3">Réponse 2</label>
+    <input
+      type="radio"
+      id="bonneRep2"
+      name="bonneReponse"
+      #rep2
+      [value]="'reponse2'"
+      formControlName="bonneReponse"
+    />
+    <label
+      for="bonneRep2"
+      class="form-label"
+      [ngClass]="{
+        'btn-success': rep2.checked,
+        'btn-secondary': !rep2.checked
+      }"
+      >{{ rep2.checked ? "Bonne réponse" : "Mauvaise réponse" }}</label
+    >
     <input
       type="text"
       formControlName="reponse2"
@@ -34,7 +68,24 @@
   </div>
 
   <div class="mb-3">
-    <label for="input-reponse3" class="form-label">Réponse 3</label>
+    <label for="input-reponse3" class="form-label pe-3">Réponse 3</label>
+    <input
+      type="radio"
+      id="bonneRep3"
+      name="bonneReponse"
+      #rep3
+      [value]="'reponse3'"
+      formControlName="bonneReponse"
+    />
+    <label
+      for="bonneRep3"
+      class="form-label"
+      [ngClass]="{
+        'btn-success': rep3.checked,
+        'btn-secondary': !rep3.checked
+      }"
+      >{{ rep3.checked ? "Bonne réponse" : "Mauvaise réponse" }}</label
+    >
     <input
       type="text"
       formControlName="reponse3"
@@ -44,7 +95,25 @@
   </div>
 
   <div class="mb-3">
-    <label for="input-reponse4" class="form-label">Réponse 4</label>
+    <label for="input-reponse4" class="form-label pe-3">Réponse 4</label>
+    <input
+      type="radio"
+      id="bonneRep4"
+      name="bonneReponse"
+      #rep4
+      [value]="'reponse4'"
+      formControlName="bonneReponse"
+    />
+    <label
+      for="bonneRep4"
+      class="form-label"
+      [ngClass]="{
+        'btn-success': rep4.checked,
+        'btn-secondary': !rep4.checked
+      }"
+      >{{ rep4.checked ? "Bonne réponse" : "Mauvaise réponse" }}</label
+    >
+
     <input
       type="text"
       formControlName="reponse4"
@@ -52,13 +121,8 @@
       class="form-control"
     />
   </div>
-<div>
-  <button class="btn btn-dark" type="submit" >
-    Valider
-  </button>
-  <button class="btn btn-dark" [routerLink]="['../../../../category/', id]">
-    Annuler
-  </button>
-</div>
+  <div>
+    <button class="btn btn-dark" type="submit">Valider</button>
+    <button class="btn btn-dark" [routerLink]="[path, id]">Annuler</button>
+  </div>
 </form>
-
