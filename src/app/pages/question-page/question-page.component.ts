@@ -64,7 +64,7 @@ export class QuestionPageComponent implements OnInit {
     setTimeout(() => {
       this.validateBtn = false;
       this.passerQuestionSuivante2();
-    }, 1000);
+    }, 2000);
   }
   passerQuestionSuivante2() {
     for (const iterator of this.questions[this.currentQuestionIndex].reponse) {
