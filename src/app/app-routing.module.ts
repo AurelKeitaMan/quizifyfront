@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'admin/category/:id', component: QuestCategorizerComponent },
   { path: 'admin/category/edit/:id', component: EditCategoryPageComponent },
   { path: 'admin/question/create/:id', component: CreateQuestionPageComponent },
-  { path: 'admin/question/edit/:id', component: EditQuestionPageComponent },
+  { path: 'admin/question/edit/:idCat/:id', component: EditQuestionPageComponent },
   { path: 'myStats', component: MyStatsPageComponent },
   { path: '**', component: PageNotFoundComponent },
 ];

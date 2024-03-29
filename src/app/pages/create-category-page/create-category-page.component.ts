@@ -14,6 +14,8 @@ export class CreateCategoryPageComponent {
     private router: Router
   ) {}
   addCategory(category: Category) {
+
+    
     this.categoryService.addCategory(category).subscribe(() => {
       console.log('ok');
       this.router.navigate(['/admin']);

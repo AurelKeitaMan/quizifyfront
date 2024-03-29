@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Question } from '../models/question';
+import { FormUp } from '../models/form-up';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root',
@@ -24,8 +26,8 @@ export class QuestionService {
     return this.http.get<Question>(`${this.urlApi}/${id}`);
   }
 
-  addQuestion(question: Question, id: number): Observable<Question> {
-    return this.http.post<Question>(`${this.urlApi}/${id}`, question);
+  addQuestion(question: FormGroup, id: number): Observable<FormGroup> {
+    return this.http.post<FormGroup>(`${this.urlApi}/${id}`, question);
   }
   addQuestionB(question: Question): Observable<Question> {
     return this.http.post<Question>(this.urlApi, question);

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { FormUp } from 'src/app/models/form-up';
 import { Question } from 'src/app/models/question';
 import { QuestionService } from 'src/app/services/question.service';
 
@@ -25,7 +27,7 @@ export class CreateQuestionPageComponent {
     });
   }
 
-  addQuestion(question: Question) {
+  addQuestion(question: FormGroup) {
     console.log(question);
     this.router.navigate(['/admin/category', this.id]);
     this.questionservice.addQuestion(question, this.id).subscribe(() => {});

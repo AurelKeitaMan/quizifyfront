@@ -11,6 +11,7 @@ import { QuestionService } from 'src/app/services/question.service';
 export class QuestCategorizerComponent implements OnInit {
   questionToDisplay: Question[] = [];
   id!:number;
+  path!:string;
   constructor(
     private questionService: QuestionService,
     private route: ActivatedRoute
@@ -20,6 +21,7 @@ export class QuestCategorizerComponent implements OnInit {
       if (param) {
         const id = param.get('id')!;
         this.id=+id;
+        this.path = `../../question/edit/${+id}`
         this.questionService
           .getQuestionsByCategory(+id)
           .subscribe((question) => {
