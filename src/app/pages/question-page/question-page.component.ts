@@ -16,6 +16,7 @@ export class QuestionPageComponent implements OnInit {
   categories!: Category;
   questions: Question[] = [];
   selectedOption: number | null = null;
+  sel1 = 'none';
   currentQuestionIndex: number = 0;
   score = 0;
   validateBtn: boolean = false;
@@ -52,6 +53,7 @@ export class QuestionPageComponent implements OnInit {
 
   selectOption(option: number) {
     this.selectedOption = option;
+    this.sel1 = option.toString();
     console.log(option);
   }
 

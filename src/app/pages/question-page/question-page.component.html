@@ -47,7 +47,10 @@
                 ><span
                   [ngClass]="{
                     'is-valid': reponse.estCorrect && validateBtn,
-                    'is-invalid': !reponse.estCorrect && validateBtn
+                    'is-invalid':
+                      !reponse.estCorrect &&
+                      validateBtn &&
+                      [reponse.id.toString()].includes(sel1)
                   }"
                   >{{ reponse.libelle }}</span
                 ></label
