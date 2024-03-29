@@ -6,14 +6,17 @@ import { CategoryService } from 'src/app/services/category.service';
 @Component({
   selector: 'app-play-to-quiz',
   templateUrl: './play-to-quiz.component.html',
-  styleUrls: ['./play-to-quiz.component.css']
+  styleUrls: ['./play-to-quiz.component.css'],
 })
 export class PlayToQuizComponent implements OnInit {
   options!: Category[];
   selectedOption!: string;
   categories: any;
 
-  constructor(private categoryService: CategoryService, private router: Router) {}
+  constructor(
+    private categoryService: CategoryService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.loadCategories();
@@ -22,16 +25,18 @@ export class PlayToQuizComponent implements OnInit {
   loadCategories() {
     this.categoryService.getCategoriesForQuiz().subscribe(
       (data: Category[]) => {
-        this.options = data
-        console.log("Je récupère toutes les catégories c'est ok", data);
+        this.options = data;
       },
-      error => {
-        console.error('Une erreur est survenue lors du chargement des catégories : ', error);
+      (error) => {
+        console.error(
+          'Une erreur est survenue lors du chargement des catégories : ',
+          error
+        );
       }
     );
   }
 
-    isSelected(optionId: string): boolean {
+  isSelected(optionId: string): boolean {
     console.log("C'est bon ça fonctionne, Catégorie sélectionnée :", optionId);
     return this.selectedOption === optionId;
   }
@@ -40,7 +45,7 @@ export class PlayToQuizComponent implements OnInit {
     console.log('Catégorie sélectionnée : ', selectedCategoryId);
     if (selectedCategoryId) {
       console.log(this.selectedOption);
-      
+
       this.router.navigate(['/quiz/question/', selectedCategoryId]);
     }
   }
