@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { timeInterval } from 'rxjs';
 import { Category } from 'src/app/models/category';
 import { Question } from 'src/app/models/question';
-import { ResponseQ } from 'src/app/models/responseQ';
 import { CategoryService } from 'src/app/services/category.service';
 import { QuestionService } from 'src/app/services/question.service';
 
@@ -18,6 +18,7 @@ export class QuestionPageComponent implements OnInit {
   selectedOption: number | null = null;
   currentQuestionIndex: number = 0;
   score = 0;
+  validateBtn: boolean = false;
 
   constructor(
     private categoryService: CategoryService,
@@ -59,6 +60,13 @@ export class QuestionPageComponent implements OnInit {
   }
 
   passerQuestionSuivante() {
+    this.validateBtn = true;
+    setTimeout(() => {
+      this.validateBtn = false;
+      this.passerQuestionSuivante2();
+    }, 1000);
+  }
+  passerQuestionSuivante2() {
     for (const iterator of this.questions[this.currentQuestionIndex].reponse) {
       if (this.selectOption !== null) {
         if (iterator.id === this.selectedOption) {

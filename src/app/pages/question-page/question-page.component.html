@@ -38,9 +38,29 @@
                 (click)="selectOption(reponse.id)"
                 name="option"
               />
-              <label [for]="reponse.id">{{ reponse.libelle }}</label>
+              <label
+                [for]="reponse.id"
+                [ngClass]="{
+                  'is-valid': reponse.estCorrect,
+                  'is-invalid': !reponse.estCorrect
+                }"
+                ><span
+                  [ngClass]="{
+                    'is-valid': reponse.estCorrect && validateBtn,
+                    'is-invalid': !reponse.estCorrect && validateBtn
+                  }"
+                  >{{ reponse.libelle }}</span
+                ></label
+              >
             </p>
-            <p><button class="button-custom-manue"  (click)="passerQuestionSuivante()">Valider</button></p>
+            <p>
+              <button
+                class="button-custom-manue"
+                (click)="passerQuestionSuivante()"
+              >
+                Valider
+              </button>
+            </p>
           </div>
         </div>
       </div>

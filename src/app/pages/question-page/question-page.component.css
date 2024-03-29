@@ -1,10 +1,10 @@
 .container-question {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin: 20px 0;
-        justify-content: center;
-        align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px 0;
+  justify-content: center;
+  align-items: center;
 }
 
 .element-style {
@@ -12,25 +12,24 @@
 }
 
 .categorie-question {
-
-        margin-left: 50px;
-        display: flex;
-        font-weight: bold;
-        font-size: x-large ;
+  margin-left: 50px;
+  display: flex;
+  font-weight: bold;
+  font-size: x-large;
 }
 
 .titre-question {
-        margin-bottom: 60px;
-     }
+  margin-bottom: 60px;
+}
 
 .button-question {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 span {
-        text-align: center;
-        font-size:large;
-        background-color: #E5D2F8;
+  text-align: center;
+  font-size: large;
+  background-color: #e5d2f8;
 }
 
 .span-size {
@@ -39,113 +38,110 @@ span {
 }
 
 .question {
-    background-color: #B89BBA;
-  }
-
-  
-.container-custom-manue {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .titre-custom-manue {
-    display: flexbox;
-    flex-wrap: wrap;
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  .background-custom-manue{
-    background: #B89BBA;
-  }
-  
-  
-  .container-custom-manue {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .select-custom-manue {
-    margin: 10px;
-    margin-top: 20 px;
-    width: 200px;
-    height: 30px;
-  }
-  
-  button {
-    margin-top: 10px;
-    background-color: #9987B7;
-  }
-
-  .selected {
-    background-color: #9987B7;
+  background-color: #b89bba;
 }
 
+.container-custom-manue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titre-custom-manue {
+  display: flexbox;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.background-custom-manue {
+  background: #b89bba;
+}
+
+.container-custom-manue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.select-custom-manue {
+  margin: 10px;
+  margin-top: 20 px;
+  width: 200px;
+  height: 30px;
+}
+
+button {
+  margin-top: 10px;
+  background-color: #9987b7;
+}
+
+.selected {
+  background-color: #9987b7;
+}
 
 div label input {
-  margin-right:100px;
+  margin-right: 100px;
 }
 
 .ck {
-   margin:4px;
-   background-color:#EFEFEF;
-   border-radius:4px;
-   border:1px solid #D0D0D0;
-   overflow:auto;
-   float:left;
-   height: max-content;
-   width: max-content;
+  margin: 4px;
+  background-color: #efefef;
+  border-radius: 4px;
+  border: 1px solid #d0d0d0;
+  overflow: auto;
+  float: left;
+  height: max-content;
+  width: max-content;
 }
 
 .ck:hover {
-   background:#9987B7;
+  background: #9987b7;
 }
 
 .ck label {
-   cursor: pointer;
-   padding: 5px 10px;
-   transition: background-color 0.3s ease;
-   background-color: #EFEFEF;
-   border-radius: 4px;
-   border: 1px solid #D0D0D0;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: background-color 0.3s ease;
+  background-color: #efefef;
+  border-radius: 4px;
+  border: 1px solid #d0d0d0;
 }
 
 .ck label span {
-   text-align:center;
-   padding:3px 0px;
-   display:block;
+  text-align: center;
+  padding: 3px 0px;
+  display: block;
 }
 
 .ck label input {
-   position:absolute;
-   top:-20px;
+  position: absolute;
+  top: -20px;
 }
 
 .ck input:checked + span {
-   background-color:#9987B7;
-   color:#fff;
+  background-color: #9987b7;
+  color: #fff;
 }
 
 /*--------------*/
 .hidden {
- position: absolute;
- visibility: hidden;
- opacity: 0;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
 }
 
-input[type=radio]+label {
- color: black;
- font-weight:normal;
+input[type="radio"] + label {
+  color: black;
+  font-weight: normal;
 }
 
-input[type=radio]:checked+label {
- color: black;
- font-weight: bold;
- background-color: #9987B7;
- border-color: black;
- border-width: 1.5px;
+input[type="radio"]:checked + label {
+  color: black;
+  font-weight: bold;
+  background-color: #9987b7;
+  border-color: black;
+  border-width: 1.5px;
 }
 
 .hidden-radio {
@@ -158,4 +154,12 @@ input[type=radio]:checked+label {
   position: absolute;
   opacity: 0;
   pointer-events: none;
+}
+
+.is-valid {
+  background-color: green;
+}
+
+.is-invalid {
+  background-color: red;
 }
