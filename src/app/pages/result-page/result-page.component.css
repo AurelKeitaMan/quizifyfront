@@ -1,0 +1,16 @@
+.result-style {
+
+    font-size:300%;
+    font-weight: bolder;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+button {
+    margin-top: 10px;
+    background-color: #9987B7;
+    height: max-content;
+    font-size: x-large;
+}
